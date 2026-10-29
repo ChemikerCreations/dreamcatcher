@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tecnologia — Dream Catching Systems (parodia)</title>
+<meta name="description" content="Parodia della pagina Technology di windcatching.com: cattura del vento con un approccio diverso, a base di cerchi azzurri, perline e piume.">
+<style>
+:root{
+  --navy:#0b2233; --navy2:#12384f; --teal:#17b3c7; --teal-d:#0e8fa0; --sand:#f4efe6;
+  --ink:#16222b; --mute:#5b6b76; --orange:#c9803f; --line:#dfe6ea;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;color:var(--ink);background:#fff;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+img,svg{max-width:100%;display:block}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+
+/* header */
+header.top{position:sticky;top:0;z-index:20;background:rgba(11,34,51,.96);backdrop-filter:blur(6px);color:#fff}
+header.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:64px;flex-wrap:wrap}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:700;letter-spacing:.14em;font-size:13px;text-transform:uppercase}
+.logo i{width:30px;height:30px;border-radius:50%;border:4px solid var(--teal);position:relative;display:inline-block;flex:none}
+.logo i::after{content:"";position:absolute;inset:3px;border-radius:50%;border:1px solid #e9a463}
+.logo small{display:block;font-weight:400;letter-spacing:.08em;font-size:10px;color:#9fc3cf}
+nav ul{list-style:none;display:flex;gap:22px;flex-wrap:wrap}
+nav a{text-decoration:none;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:#cfe3ea;padding:6px 0;border-bottom:2px solid transparent}
+nav a:hover,nav a[aria-current]{color:#fff;border-bottom-color:var(--teal)}
+
+/* hero */
+.hero{position:relative;color:#fff;background:linear-gradient(160deg,var(--navy) 0%,var(--navy2) 55%,#1a5a6e 100%);overflow:hidden}
+.hero::before{content:"";position:absolute;inset:0;opacity:.35;
+  background-image:repeating-linear-gradient(100deg,rgba(255,255,255,.0) 0 38px,rgba(255,255,255,.55) 38px 39px,rgba(255,255,255,0) 39px 90px);
+  background-size:200% 100%;animation:streak 14s linear infinite}
+@keyframes streak{to{background-position:-100% 0}}
+.hero .wrap{position:relative;display:grid;grid-template-columns:1.15fr .85fr;gap:40px;align-items:center;padding-top:64px;padding-bottom:64px}
+.kicker{font-size:15px;letter-spacing:.22em;text-transform:uppercase;color:#8fd9e4;font-weight:600}
+.hero h1{font-size:clamp(38px,6.4vw,76px);line-height:1.02;letter-spacing:.01em;text-transform:uppercase;margin:12px 0 22px;font-weight:800}
+.hero h1 span{color:var(--teal)}
+.hero p.lead{font-size:18px;max-width:560px;color:#d7e8ee}
+.btn{display:inline-block;margin-top:28px;padding:14px 26px;border:2px solid var(--teal);color:#fff;text-decoration:none;text-transform:uppercase;letter-spacing:.12em;font-size:13px;font-weight:700;transition:.2s}
+.btn:hover{background:var(--teal);color:var(--navy)}
+.hero figure{justify-self:center;text-align:center}
+.hero figure .frame{width:min(340px,80vw);border-radius:14px;overflow:hidden;box-shadow:0 30px 60px rgba(0,0,0,.45);transform-origin:50% 0;animation:sway 5s ease-in-out infinite;background:#6f6f8f}
+.hero figure img{width:100%;height:auto}
+.hero figcaption{font-size:12px;color:#9fc3cf;margin-top:14px;letter-spacing:.06em}
+@keyframes sway{0%,100%{transform:rotate(-2.2deg)}50%{transform:rotate(2.2deg)}}
+
+/* generic sections */
+section{padding:72px 0}
+section.alt{background:var(--sand)}
+h2.sec{font-size:clamp(26px,3.4vw,38px);text-transform:uppercase;letter-spacing:.04em;margin-bottom:8px;font-weight:800}
+.sub{color:var(--mute);max-width:720px;margin-bottom:36px}
+.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+.card{background:#fff;border:1px solid var(--line);border-radius:6px;overflow:hidden;display:flex;flex-direction:column}
+.card .ph{height:170px;background-image:var(--photo);background-repeat:no-repeat;background-color:#6f6f8f}
+.card .body{padding:18px 18px 22px}
+.card h3{font-size:18px;margin-bottom:8px;line-height:1.25}
+.card p{font-size:14.5px;color:var(--mute)}
+.center{text-align:center;margin-top:34px}
+.btn.dark{border-color:var(--navy);color:var(--navy)}
+.btn.dark:hover{background:var(--navy);color:#fff}
+
+/* wind meter */
+.meter{background:var(--navy);color:#fff;border-radius:10px;padding:28px;display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:center}
+.meter label{font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:#9fc3cf}
+.meter input[type=range]{width:100%;margin:14px 0 6px;accent-color:var(--teal)}
+.big{font-size:44px;font-weight:800;line-height:1}
+.big small{font-size:16px;font-weight:400;color:#9fc3cf}
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.stats div{border-left:3px solid var(--teal);padding-left:12px}
+.stats .n{font-size:26px;font-weight:700}
+.stats .l{font-size:12px;color:#9fc3cf;text-transform:uppercase;letter-spacing:.08em}
+#msg{grid-column:1/-1;font-style:italic;color:#d7e8ee;border-top:1px solid rgba(255,255,255,.15);padding-top:16px;min-height:44px}
+
+/* news */
+.news{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.news article{border-top:4px solid var(--teal);padding-top:14px}
+.news time{font-size:12px;letter-spacing:.1em;color:var(--mute);text-transform:uppercase}
+.news h3{font-size:19px;margin:6px 0 8px;line-height:1.3}
+.news p{font-size:14.5px;color:var(--mute)}
+
+/* technology page */
+.claims{list-style:none;margin-top:30px}
+.claims li{padding:16px 0;border-top:1px solid rgba(255,255,255,.22);font-size:19px;color:#e8f4f8}
+.claims li:last-child{border-bottom:1px solid rgba(255,255,255,.22)}
+.hero.tech .wrap{grid-template-columns:1.2fr .8fr}
+.hero.tech svg.dc{width:min(300px,70vw);margin:0 auto;filter:drop-shadow(0 18px 30px rgba(0,0,0,.4))}
+.sway{transform-origin:150px 10px;animation:sway 6s ease-in-out infinite}
+.split{display:grid;grid-template-columns:.9fr 1.1fr;gap:48px;align-items:start}
+.split.rev{grid-template-columns:1.1fr .9fr}
+.sub-items h3{font-size:18px;margin:0 0 6px;color:var(--navy)}
+.sub-items p{color:var(--mute);margin-bottom:22px;font-size:15.5px}
+table.spec{width:100%;border-collapse:collapse;font-size:15px;background:#fff}
+table.spec th,table.spec td{text-align:left;padding:12px 14px;border-bottom:1px solid var(--line);vertical-align:top}
+table.spec th{background:var(--navy);color:#fff;font-size:12px;letter-spacing:.1em;text-transform:uppercase}
+table.spec td:first-child{font-weight:600;width:34%}
+.crit{border-left:4px solid var(--orange);background:#fff7ee;padding:16px 18px;font-size:14.5px;color:#4a3a2a;margin-top:26px}
+.crit a{color:var(--teal-d)}
+
+/* footer */
+footer{background:var(--navy);color:#cfe3ea;padding:46px 0 30px;font-size:14px}
+footer .cols{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap}
+footer ul{list-style:none}
+footer li{margin-bottom:6px}
+footer a{text-decoration:none;border-bottom:1px dotted #5d8797}
+footer .disc{margin-top:28px;padding-top:18px;border-top:1px solid rgba(255,255,255,.14);font-size:12.5px;color:#8fb0bd}
+
+@media (max-width:900px){
+  .hero .wrap,.hero.tech .wrap,.split,.split.rev,.meter{grid-template-columns:1fr}
+  .grid4{grid-template-columns:repeat(2,1fr)}
+  .news{grid-template-columns:1fr}
+}
+@media (max-width:520px){
+  .grid4{grid-template-columns:1fr}
+  nav ul{gap:14px}
+  .stats{grid-template-columns:1fr}
+}
+@media (prefers-reduced-motion:reduce){
+  .hero::before,.hero figure .frame,.sway{animation:none}
+}
+
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="index.html"><i></i><span>Dream Catching Systems<small>parodia · non affiliata</small></span></a>
+    <nav aria-label="Principale">
+      <ul>
+        <li><a href="tecnologia.html" aria-current="page">Tecnologia</a></li>
+        <li><a href="index.html#news">News e stampa</a></li>
+        <li><a href="#sostenibilita">Sostenibilità</a></li>
+        <li><a href="index.html#chi-siamo">Chi siamo</a></li>
+        <li><a href="#contatti">Contatti e carriere</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+<div class="hero tech">
+  <div class="wrap">
+    <div>
+      <div class="kicker">Tecnologia</div>
+      <h1>Cattura del vento con un <span>approccio diverso</span></h1>
+      <ul class="claims">
+        <li>Progettato per massimizzare la resa di ogni singolo cerchio</li>
+        <li>Progettato per una manutenzione altamente efficiente (una spolverata, ogni tanto)</li>
+        <li>Sistema integrato di gestione delle piume</li>
+        <li>Nessuna nave specializzata né gru, nessun bisogno di tornare in porto (basta tornare in salotto)</li>
+        <li>50 anni di vita utile della struttura (garanzia valida fino al primo gatto)</li>
+      </ul>
+    </div>
+    <div>
+      <svg class="dc" viewBox="0 0 300 510" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Il Windcatcher: un dreamcatcher azzurro con quattro cerchi, perline e piume"><g class="sway"><g transform="translate(54,262) rotate(8)"><path d="M0,0 C11,37.5 10.45,105.0 0,150 C-10.45,105.0 -11,37.5 0,0Z" fill="#d9d4cb" stroke="#a9a196" stroke-width=".6"/><path d="M0,87.0 C8.8,108.0 6.6,135.0 0,150 C-6.6,135.0 -8.8,108.0 0,87.0Z" fill="#b5652a" opacity=".9"/><path d="M0,0 L0,150" stroke="#7a6d5c" stroke-width=".9"/></g><g transform="translate(66,262) rotate(-2)"><path d="M0,0 C12,42.0 11.399999999999999,117.6 0,168 C-11.399999999999999,117.6 -12,42.0 0,0Z" fill="#d9d4cb" stroke="#a9a196" stroke-width=".6"/><path d="M0,97.44 C9.600000000000001,120.96 7.199999999999999,151.20000000000002 0,168 C-7.199999999999999,151.20000000000002 -9.600000000000001,120.96 0,97.44Z" fill="#2a2622" opacity=".9"/><path d="M0,0 L0,168" stroke="#7a6d5c" stroke-width=".9"/></g><g transform="translate(78,262) rotate(-14)"><path d="M0,0 C10,34.5 9.5,96.6 0,138 C-9.5,96.6 -10,34.5 0,0Z" fill="#d9d4cb" stroke="#a9a196" stroke-width=".6"/><path d="M0,80.03999999999999 C8.0,99.36 6.0,124.2 0,138 C-6.0,124.2 -8.0,99.36 0,80.03999999999999Z" fill="#6b4a32" opacity=".9"/><path d="M0,0 L0,138" stroke="#7a6d5c" stroke-width=".9"/></g><g transform="translate(136,296) rotate(7)"><path d="M0,0 C12,47.5 11.399999999999999,133.0 0,190 C-11.399999999999999,133.0 -12,47.5 0,0Z" fill="#d9d4cb" stroke="#a9a196" stroke-width=".6"/><path d="M0,110.19999999999999 C9.600000000000001,136.79999999999998 7.199999999999999,171.0 0,190 C-7.199999999999999,171.0 -9.600000000000001,136.79999999999998 0,110.19999999999999Z" fill="#b5652a" opacity=".9"/><path d="M0,0 L0,190" stroke="#7a6d5c" stroke-width=".9"/></g><g transform="translate(150,296) rotate(-1)"><path d="M0,0 C13,49.5 12.35,138.6 0,198 C-12.35,138.6 -13,49.5 0,0Z" fill="#d9d4cb" stroke="#a9a196" stroke-width=".6"/><path d="M0,114.83999999999999 C10.4,142.56 7.8,178.20000000000002 0,198 C-7.8,178.20000000000002 -10.4,142.56 0,114.83999999999999Z" fill="#2a2622" opacity=".9"/><path d="M0,0 L0,198" stroke="#7a6d5c" stroke-width=".9"/></g><g transform="translate(162,296) rotate(-9)"><path d="M0,0 C12,45.5 11.399999999999999,127.39999999999999 0,182 C-11.399999999999999,127.39999999999999 -12,45.5 0,0Z" fill="#d9d4cb" stroke="#a9a196" stroke-width=".6"/><path d="M0,105.55999999999999 C9.600000000000001,131.04 7.199999999999999,163.8 0,182 C-7.199999999999999,163.8 -9.600000000000001,131.04 0,105.55999999999999Z" fill="#6b4a32" opacity=".9"/><path d="M0,0 L0,182" stroke="#7a6d5c" stroke-width=".9"/></g><g transform="translate(146,296) rotate(17)"><path d="M0,0 C10,41.25 9.5,115.49999999999999 0,165 C-9.5,115.49999999999999 -10,41.25 0,0Z" fill="#d9d4cb" stroke="#a9a196" stroke-width=".6"/><path d="M0,95.69999999999999 C8.0,118.8 6.0,148.5 0,165 C-6.0,148.5 -8.0,118.8 0,95.69999999999999Z" fill="#6b4a32" opacity=".9"/><path d="M0,0 L0,165" stroke="#7a6d5c" stroke-width=".9"/></g><g transform="translate(220,258) rotate(10)"><path d="M0,0 C11,37.5 10.45,105.0 0,150 C-10.45,105.0 -11,37.5 0,0Z" fill="#d9d4cb" stroke="#a9a196" stroke-width=".6"/><path d="M0,87.0 C8.8,108.0 6.6,135.0 0,150 C-6.6,135.0 -8.8,108.0 0,87.0Z" fill="#2a2622" opacity=".9"/><path d="M0,0 L0,150" stroke="#7a6d5c" stroke-width=".9"/></g><g transform="translate(232,258) rotate(0)"><path d="M0,0 C12,43.0 11.399999999999999,120.39999999999999 0,172 C-11.399999999999999,120.39999999999999 -12,43.0 0,0Z" fill="#d9d4cb" stroke="#a9a196" stroke-width=".6"/><path d="M0,99.75999999999999 C9.600000000000001,123.83999999999999 7.199999999999999,154.8 0,172 C-7.199999999999999,154.8 -9.600000000000001,123.83999999999999 0,99.75999999999999Z" fill="#b5652a" opacity=".9"/><path d="M0,0 L0,172" stroke="#7a6d5c" stroke-width=".9"/></g><g transform="translate(244,258) rotate(-13)"><path d="M0,0 C10,34.5 9.5,96.6 0,138 C-9.5,96.6 -10,34.5 0,0Z" fill="#d9d4cb" stroke="#a9a196" stroke-width=".6"/><path d="M0,80.03999999999999 C8.0,99.36 6.0,124.2 0,138 C-6.0,124.2 -8.0,99.36 0,80.03999999999999Z" fill="#6b4a32" opacity=".9"/><path d="M0,0 L0,138" stroke="#7a6d5c" stroke-width=".9"/></g><path d="M150,32 L150,2" stroke="#17b3c7" stroke-width="3.4" fill="none"/><ellipse cx="150" cy="16" rx="5.5" ry="4.6" fill="#1a1a1a"/><line x1="108" y1="153" x2="82" y2="145" stroke="#17b3c7" stroke-width="2.6"/><ellipse cx="95" cy="149" rx="4" ry="3.2" fill="#efe6d2" stroke="#000" stroke-opacity=".25" stroke-width=".5"/><line x1="194" y1="152" x2="215" y2="138" stroke="#17b3c7" stroke-width="2.6"/><ellipse cx="204" cy="145" rx="4" ry="3.2" fill="#7a2a1c" stroke="#000" stroke-opacity=".25" stroke-width=".5"/><line x1="150" y1="168" x2="150" y2="206" stroke="#17b3c7" stroke-width="2.6"/><ellipse cx="150" cy="176.0" rx="4.2" ry="3.4" fill="#7a2a1c" stroke="#000" stroke-opacity=".25" stroke-width=".5"/><ellipse cx="150" cy="183.5" rx="4.2" ry="3.4" fill="#efe6d2" stroke="#000" stroke-opacity=".25" stroke-width=".5"/><ellipse cx="150" cy="191.0" rx="4.2" ry="3.4" fill="#1a1a1a" stroke="#000" stroke-opacity=".25" stroke-width=".5"/><ellipse cx="150" cy="198.5" rx="4.2" ry="3.4" fill="#7a2a1c" stroke="#000" stroke-opacity=".25" stroke-width=".5"/><line x1="54" y1="202" x2="54" y2="266" stroke="#17b3c7" stroke-width="2.6"/><ellipse cx="54" cy="210.0" rx="4.2" ry="3.4" fill="#7a2a1c" stroke="#000" stroke-opacity=".25" stroke-width=".5"/><ellipse cx="54" cy="217.5" rx="4.2" ry="3.4" fill="#efe6d2" stroke="#000" stroke-opacity=".25" stroke-width=".5"/><ellipse cx="54" cy="225.0" rx="4.2" ry="3.4" fill="#1a1a1a" stroke="#000" stroke-opacity=".25" stroke-width=".5"/><ellipse cx="54" cy="232.5" rx="4.2" ry="3.4" fill="#7a2a1c" stroke="#000" stroke-opacity=".25" stroke-width=".5"/><line x1="66" y1="202" x2="66" y2="266" stroke="#17b3c7" stroke-width="2.6"/><ellipse cx="66" cy="210.0" rx="4.2" ry="3.4" fill="#7a2a1c" stroke="#000" stroke-opacity=".25" stroke-width=".5"/><ellipse cx="66" cy="217.5" rx="4.2" ry="3.4" fill="#efe6d2" stroke="#000" stroke-opacity=".25" stroke-width=".5"/><ellipse cx="66" cy="225.0" rx="4.2" ry="3.4" fill="#1a1a1a" stroke="#000" stroke-opacity=".25" stroke-width=".5"/><ellipse cx="66" cy="232.5" rx="4.2" ry="3.4" fill="#7a2a1c" stroke="#000" stroke-opacity=".25" stroke-width=".5"/><line x1="78" y1="202" x2="78" y2="266" stroke="#17b3c7" stroke-width="2.6"/><ellipse cx="78" cy="210.0" rx="4.2" ry="3.4" fill="#7a2a1c" stroke="#000" stroke-opacity=".25" stroke-width=".5"/><ellipse cx="78" cy="217.5" rx="4.2" ry="3.4" fill="#efe6d2" stroke="#000" stroke-opacity=".25" stroke-width=".5"/><ellipse cx="78" cy="225.0" rx="4.2" ry="3.4" fill="#1a1a1a" stroke="#000" stroke-opacity=".25" stroke-width=".5"/><ellipse cx="78" cy="232.5" rx="4.2" ry="3.4" fill="#7a2a1c" stroke="#000" stroke-opacity=".25" stroke-width=".5"/><line x1="138" y1="268" x2="138" y2="300" stroke="#17b3c7" stroke-width="2.6"/><ellipse cx="138" cy="276.0" rx="4.2" ry="3.4" fill="#7a2a1c" stroke="#000" stroke-opacity=".25" stroke-width=".5"/><ellipse cx="138" cy="283.5" rx="4.2" ry="3.4" fill="#efe6d2" stroke="#000" stroke-opacity=".25" stroke-width=".5"/><ellipse cx="138" cy="291.0" rx="4.2" ry="3.4" fill="#1a1a1a" stroke="#000" stroke-opacity=".25" stroke-width=".5"/><line x1="150" y1="268" x2="150" y2="300" stroke="#17b3c7" stroke-width="2.6"/><ellipse cx="150" cy="276.0" rx="4.2" ry="3.4" fill="#7a2a1c" stroke="#000" stroke-opacity=".25" stroke-width=".5"/><ellipse cx="150" cy="283.5" rx="4.2" ry="3.4" fill="#efe6d2" stroke="#000" stroke-opacity=".25" stroke-width=".5"/><ellipse cx="150" cy="291.0" rx="4.2" ry="3.4" fill="#1a1a1a" stroke="#000" stroke-opacity=".25" stroke-width=".5"/><line x1="162" y1="268" x2="162" y2="300" stroke="#17b3c7" stroke-width="2.6"/><ellipse cx="162" cy="276.0" rx="4.2" ry="3.4" fill="#7a2a1c" stroke="#000" stroke-opacity=".25" stroke-width=".5"/><ellipse cx="162" cy="283.5" rx="4.2" ry="3.4" fill="#efe6d2" stroke="#000" stroke-opacity=".25" stroke-width=".5"/><ellipse cx="162" cy="291.0" rx="4.2" ry="3.4" fill="#1a1a1a" stroke="#000" stroke-opacity=".25" stroke-width=".5"/><line x1="220" y1="196" x2="220" y2="262" stroke="#17b3c7" stroke-width="2.6"/><ellipse cx="220" cy="204.0" rx="4.2" ry="3.4" fill="#efe6d2" stroke="#000" stroke-opacity=".25" stroke-width=".5"/><ellipse cx="220" cy="211.5" rx="4.2" ry="3.4" fill="#1a1a1a" stroke="#000" stroke-opacity=".25" stroke-width=".5"/><ellipse cx="220" cy="219.0" rx="4.2" ry="3.4" fill="#7a2a1c" stroke="#000" stroke-opacity=".25" stroke-width=".5"/><ellipse cx="220" cy="226.5" rx="4.2" ry="3.4" fill="#efe6d2" stroke="#000" stroke-opacity=".25" stroke-width=".5"/><line x1="232" y1="196" x2="232" y2="262" stroke="#17b3c7" stroke-width="2.6"/><ellipse cx="232" cy="204.0" rx="4.2" ry="3.4" fill="#efe6d2" stroke="#000" stroke-opacity=".25" stroke-width=".5"/><ellipse cx="232" cy="211.5" rx="4.2" ry="3.4" fill="#1a1a1a" stroke="#000" stroke-opacity=".25" stroke-width=".5"/><ellipse cx="232" cy="219.0" rx="4.2" ry="3.4" fill="#7a2a1c" stroke="#000" stroke-opacity=".25" stroke-width=".5"/><ellipse cx="232" cy="226.5" rx="4.2" ry="3.4" fill="#efe6d2" stroke="#000" stroke-opacity=".25" stroke-width=".5"/><line x1="244" y1="196" x2="244" y2="262" stroke="#17b3c7" stroke-width="2.6"/><ellipse cx="244" cy="204.0" rx="4.2" ry="3.4" fill="#efe6d2" stroke="#000" stroke-opacity=".25" stroke-width=".5"/><ellipse cx="244" cy="211.5" rx="4.2" ry="3.4" fill="#1a1a1a" stroke="#000" stroke-opacity=".25" stroke-width=".5"/><ellipse cx="244" cy="219.0" rx="4.2" ry="3.4" fill="#7a2a1c" stroke="#000" stroke-opacity=".25" stroke-width=".5"/><ellipse cx="244" cy="226.5" rx="4.2" ry="3.4" fill="#efe6d2" stroke="#000" stroke-opacity=".25" stroke-width=".5"/><circle cx="150" cy="100" r="68" fill="none" stroke="#0e8fa0" stroke-width="10.5"/><circle cx="150" cy="100" r="68" fill="none" stroke="#17b3c7" stroke-width="9"/><circle cx="150" cy="100" r="66.2" fill="none" stroke="#7fe3f0" stroke-width="1.3" opacity=".55" stroke-dasharray="6 5"/><g stroke="#c9803f" stroke-width="1" fill="none"><line x1="150.0" y1="37.9" x2="150.0" y2="94.9"/><line x1="193.9" y1="56.1" x2="153.6" y2="96.4"/><line x1="212.1" y1="100.0" x2="155.1" y2="100.0"/><line x1="193.9" y1="143.9" x2="153.6" y2="103.6"/><line x1="150.0" y1="162.1" x2="150.0" y2="105.1"/><line x1="106.1" y1="143.9" x2="146.4" y2="103.6"/><line x1="87.9" y1="100.0" x2="144.9" y2="100.0"/><line x1="106.1" y1="56.1" x2="146.4" y2="96.4"/><path d="M150.0,45.0 Q166.9,59.3 188.9,61.1"/><path d="M188.9,61.1 Q190.7,83.1 205.0,100.0"/><path d="M205.0,100.0 Q190.7,116.9 188.9,138.9"/><path d="M188.9,138.9 Q166.9,140.7 150.0,155.0"/><path d="M150.0,155.0 Q133.1,140.7 111.1,138.9"/><path d="M111.1,138.9 Q109.3,116.9 95.0,100.0"/><path d="M95.0,100.0 Q109.3,83.1 111.1,61.1"/><path d="M111.1,61.1 Q133.1,59.3 150.0,45.0"/><path d="M150.0,56.5 Q163.3,67.8 180.8,69.2"/><path d="M180.8,69.2 Q182.2,86.7 193.5,100.0"/><path d="M193.5,100.0 Q182.2,113.3 180.8,130.8"/><path d="M180.8,130.8 Q163.3,132.2 150.0,143.5"/><path d="M150.0,143.5 Q136.7,132.2 119.2,130.8"/><path d="M119.2,130.8 Q117.8,113.3 106.5,100.0"/><path d="M106.5,100.0 Q117.8,86.7 119.2,69.2"/><path d="M119.2,69.2 Q136.7,67.8 150.0,56.5"/><path d="M150.0,68.0 Q159.8,76.3 172.6,77.4"/><path d="M172.6,77.4 Q173.7,90.2 182.0,100.0"/><path d="M182.0,100.0 Q173.7,109.8 172.6,122.6"/><path d="M172.6,122.6 Q159.8,123.7 150.0,132.0"/><path d="M150.0,132.0 Q140.2,123.7 127.4,122.6"/><path d="M127.4,122.6 Q126.3,109.8 118.0,100.0"/><path d="M118.0,100.0 Q126.3,90.2 127.4,77.4"/><path d="M127.4,77.4 Q140.2,76.3 150.0,68.0"/><path d="M150.0,78.2 Q156.7,83.9 165.4,84.6"/><path d="M165.4,84.6 Q166.1,93.3 171.8,100.0"/><path d="M171.8,100.0 Q166.1,106.7 165.4,115.4"/><path d="M165.4,115.4 Q156.7,116.1 150.0,121.8"/><path d="M150.0,121.8 Q143.3,116.1 134.6,115.4"/><path d="M134.6,115.4 Q133.9,106.7 128.2,100.0"/><path d="M128.2,100.0 Q133.9,93.3 134.6,84.6"/><path d="M134.6,84.6 Q143.3,83.9 150.0,78.2"/><path d="M150.0,88.5 Q153.5,91.5 158.1,91.9"/><path d="M158.1,91.9 Q158.5,96.5 161.5,100.0"/><path d="M161.5,100.0 Q158.5,103.5 158.1,108.1"/><path d="M158.1,108.1 Q153.5,108.5 150.0,111.5"/><path d="M150.0,111.5 Q146.5,108.5 141.9,108.1"/><path d="M141.9,108.1 Q141.5,103.5 138.5,100.0"/><path d="M138.5,100.0 Q141.5,96.5 141.9,91.9"/><path d="M141.9,91.9 Q146.5,91.5 150.0,88.5"/></g><circle cx="150.0" cy="56.5" r="3.2" fill="#e53935" stroke="#fff" stroke-width=".6"/><circle cx="193.5" cy="100.0" r="3.2" fill="#fdd835" stroke="#fff" stroke-width=".6"/><circle cx="150.0" cy="143.5" r="3.2" fill="#43a047" stroke="#fff" stroke-width=".6"/><circle cx="118.0" cy="100.0" r="3.2" fill="#8e24aa" stroke="#fff" stroke-width=".6"/><circle cx="172.6" cy="122.6" r="3.2" fill="#f06292" stroke="#fff" stroke-width=".6"/><circle cx="165.4" cy="84.6" r="3.2" fill="#fff" stroke="#fff" stroke-width=".6"/><circle cx="134.6" cy="115.4" r="3.2" fill="#1a1a1a" stroke="#fff" stroke-width=".6"/><circle cx="150.0" cy="88.5" r="3.2" fill="#ffffff" stroke="#fff" stroke-width=".6"/><circle cx="66" cy="172" r="32" fill="none" stroke="#0e8fa0" stroke-width="7.5"/><circle cx="66" cy="172" r="32" fill="none" stroke="#17b3c7" stroke-width="6"/><circle cx="66" cy="172" r="30.8" fill="none" stroke="#7fe3f0" stroke-width="1.3" opacity=".55" stroke-dasharray="6 5"/><g stroke="#c9803f" stroke-width="1" fill="none"><line x1="66.0" y1="143.9" x2="66.0" y2="169.7"/><line x1="88.0" y1="154.5" x2="67.8" y2="170.6"/><line x1="93.4" y1="178.3" x2="68.3" y2="172.5"/><line x1="78.2" y1="197.3" x2="67.0" y2="174.1"/><line x1="53.8" y1="197.3" x2="65.0" y2="174.1"/><line x1="38.6" y1="178.3" x2="63.7" y2="172.5"/><line x1="44.0" y1="154.5" x2="64.2" y2="170.6"/><path d="M66.0,147.1 Q74.7,154.0 85.5,156.5"/><path d="M85.5,156.5 Q85.5,167.6 90.3,177.5"/><path d="M90.3,177.5 Q81.6,184.4 76.8,194.5"/><path d="M76.8,194.5 Q66.0,192.0 55.2,194.5"/><path d="M55.2,194.5 Q50.4,184.4 41.7,177.5"/><path d="M41.7,177.5 Q46.5,167.6 46.5,156.5"/><path d="M46.5,156.5 Q57.3,154.0 66.0,147.1"/><path d="M66.0,152.3 Q72.8,157.8 81.4,159.7"/><path d="M81.4,159.7 Q81.4,168.5 85.2,176.4"/><path d="M85.2,176.4 Q78.3,181.8 74.6,189.8"/><path d="M74.6,189.8 Q66.0,187.8 57.4,189.8"/><path d="M57.4,189.8 Q53.7,181.8 46.8,176.4"/><path d="M46.8,176.4 Q50.6,168.5 50.6,159.7"/><path d="M50.6,159.7 Q59.2,157.8 66.0,152.3"/><path d="M66.0,157.5 Q71.0,161.5 77.3,163.0"/><path d="M77.3,163.0 Q77.3,169.4 80.1,175.2"/><path d="M80.1,175.2 Q75.1,179.2 72.3,185.1"/><path d="M72.3,185.1 Q66.0,183.6 59.7,185.1"/><path d="M59.7,185.1 Q56.9,179.2 51.9,175.2"/><path d="M51.9,175.2 Q54.7,169.4 54.7,163.0"/><path d="M54.7,163.0 Q61.0,161.5 66.0,157.5"/><path d="M66.0,162.1 Q69.4,164.9 73.7,165.9"/><path d="M73.7,165.9 Q73.7,170.2 75.6,174.2"/><path d="M75.6,174.2 Q72.2,176.9 70.3,180.9"/><path d="M70.3,180.9 Q66.0,179.9 61.7,180.9"/><path d="M61.7,180.9 Q59.8,176.9 56.4,174.2"/><path d="M56.4,174.2 Q58.3,170.2 58.3,165.9"/><path d="M58.3,165.9 Q62.6,164.9 66.0,162.1"/><path d="M66.0,166.8 Q67.8,168.2 70.1,168.7"/><path d="M70.1,168.7 Q70.1,171.1 71.1,173.2"/><path d="M71.1,173.2 Q69.3,174.6 68.3,176.7"/><path d="M68.3,176.7 Q66.0,176.2 63.7,176.7"/><path d="M63.7,176.7 Q62.7,174.6 60.9,173.2"/><path d="M60.9,173.2 Q61.9,171.1 61.9,168.7"/><path d="M61.9,168.7 Q64.2,168.2 66.0,166.8"/></g><circle cx="77.3" cy="163.0" r="3.2" fill="#fff" stroke="#fff" stroke-width=".6"/><circle cx="56.4" cy="174.2" r="3.2" fill="#e53935" stroke="#fff" stroke-width=".6"/><circle cx="232" cy="166" r="33" fill="none" stroke="#0e8fa0" stroke-width="7.5"/><circle cx="232" cy="166" r="33" fill="none" stroke="#17b3c7" stroke-width="6"/><circle cx="232" cy="166" r="31.8" fill="none" stroke="#7fe3f0" stroke-width="1.3" opacity=".55" stroke-dasharray="6 5"/><g stroke="#c9803f" stroke-width="1" fill="none"><line x1="232.0" y1="136.9" x2="232.0" y2="163.6"/><line x1="254.8" y1="147.9" x2="233.9" y2="164.5"/><line x1="260.4" y1="172.5" x2="234.3" y2="166.5"/><line x1="244.6" y1="192.2" x2="233.0" y2="168.2"/><line x1="219.4" y1="192.2" x2="231.0" y2="168.2"/><line x1="203.6" y1="172.5" x2="229.7" y2="166.5"/><line x1="209.2" y1="147.9" x2="230.1" y2="164.5"/><path d="M232.0,140.2 Q241.0,147.4 252.2,149.9"/><path d="M252.2,149.9 Q252.1,161.4 257.2,171.7"/><path d="M257.2,171.7 Q248.1,178.9 243.2,189.2"/><path d="M243.2,189.2 Q232.0,186.6 220.8,189.2"/><path d="M220.8,189.2 Q215.9,178.9 206.8,171.7"/><path d="M206.8,171.7 Q211.9,161.4 211.8,149.9"/><path d="M211.8,149.9 Q223.0,147.4 232.0,140.2"/><path d="M232.0,145.6 Q239.1,151.3 247.9,153.3"/><path d="M247.9,153.3 Q247.9,162.4 251.9,170.5"/><path d="M251.9,170.5 Q244.8,176.2 240.9,184.4"/><path d="M240.9,184.4 Q232.0,182.3 223.1,184.4"/><path d="M223.1,184.4 Q219.2,176.2 212.1,170.5"/><path d="M212.1,170.5 Q216.1,162.4 216.1,153.3"/><path d="M216.1,153.3 Q224.9,151.3 232.0,145.6"/><path d="M232.0,151.0 Q237.2,155.2 243.7,156.6"/><path d="M243.7,156.6 Q243.7,163.3 246.6,169.3"/><path d="M246.6,169.3 Q241.4,173.5 238.5,179.5"/><path d="M238.5,179.5 Q232.0,178.0 225.5,179.5"/><path d="M225.5,179.5 Q222.6,173.5 217.4,169.3"/><path d="M217.4,169.3 Q220.3,163.3 220.3,156.6"/><path d="M220.3,156.6 Q226.8,155.2 232.0,151.0"/><path d="M232.0,155.8 Q235.5,158.6 240.0,159.6"/><path d="M240.0,159.6 Q240.0,164.2 241.9,168.3"/><path d="M241.9,168.3 Q238.4,171.1 236.4,175.2"/><path d="M236.4,175.2 Q232.0,174.2 227.6,175.2"/><path d="M227.6,175.2 Q225.6,171.1 222.1,168.3"/><path d="M222.1,168.3 Q224.0,164.2 224.0,159.6"/><path d="M224.0,159.6 Q228.5,158.6 232.0,155.8"/><path d="M232.0,160.6 Q233.9,162.1 236.2,162.6"/><path d="M236.2,162.6 Q236.2,165.0 237.3,167.2"/><path d="M237.3,167.2 Q235.4,168.7 234.3,170.9"/><path d="M234.3,170.9 Q232.0,170.3 229.7,170.9"/><path d="M229.7,170.9 Q228.6,168.7 226.7,167.2"/><path d="M226.7,167.2 Q227.8,165.0 227.8,162.6"/><path d="M227.8,162.6 Q230.1,162.1 232.0,160.6"/></g><circle cx="246.6" cy="169.3" r="3.2" fill="#e53935" stroke="#fff" stroke-width=".6"/><circle cx="224.0" cy="159.6" r="3.2" fill="#fdd835" stroke="#fff" stroke-width=".6"/><circle cx="150" cy="238" r="33" fill="none" stroke="#0e8fa0" stroke-width="7.5"/><circle cx="150" cy="238" r="33" fill="none" stroke="#17b3c7" stroke-width="6"/><circle cx="150" cy="238" r="31.8" fill="none" stroke="#7fe3f0" stroke-width="1.3" opacity=".55" stroke-dasharray="6 5"/><g stroke="#c9803f" stroke-width="1" fill="none"><line x1="150.0" y1="208.9" x2="150.0" y2="235.6"/><line x1="172.8" y1="219.9" x2="151.9" y2="236.5"/><line x1="178.4" y1="244.5" x2="152.3" y2="238.5"/><line x1="162.6" y1="264.2" x2="151.0" y2="240.2"/><line x1="137.4" y1="264.2" x2="149.0" y2="240.2"/><line x1="121.6" y1="244.5" x2="147.7" y2="238.5"/><line x1="127.2" y1="219.9" x2="148.1" y2="236.5"/><path d="M150.0,212.2 Q159.0,219.4 170.2,221.9"/><path d="M170.2,221.9 Q170.1,233.4 175.2,243.7"/><path d="M175.2,243.7 Q166.1,250.9 161.2,261.2"/><path d="M161.2,261.2 Q150.0,258.6 138.8,261.2"/><path d="M138.8,261.2 Q133.9,250.9 124.8,243.7"/><path d="M124.8,243.7 Q129.9,233.4 129.8,221.9"/><path d="M129.8,221.9 Q141.0,219.4 150.0,212.2"/><path d="M150.0,217.6 Q157.1,223.3 165.9,225.3"/><path d="M165.9,225.3 Q165.9,234.4 169.9,242.5"/><path d="M169.9,242.5 Q162.8,248.2 158.9,256.4"/><path d="M158.9,256.4 Q150.0,254.3 141.1,256.4"/><path d="M141.1,256.4 Q137.2,248.2 130.1,242.5"/><path d="M130.1,242.5 Q134.1,234.4 134.1,225.3"/><path d="M134.1,225.3 Q142.9,223.3 150.0,217.6"/><path d="M150.0,223.0 Q155.2,227.2 161.7,228.6"/><path d="M161.7,228.6 Q161.7,235.3 164.6,241.3"/><path d="M164.6,241.3 Q159.4,245.5 156.5,251.5"/><path d="M156.5,251.5 Q150.0,250.0 143.5,251.5"/><path d="M143.5,251.5 Q140.6,245.5 135.4,241.3"/><path d="M135.4,241.3 Q138.3,235.3 138.3,228.6"/><path d="M138.3,228.6 Q144.8,227.2 150.0,223.0"/><path d="M150.0,227.8 Q153.5,230.6 158.0,231.6"/><path d="M158.0,231.6 Q158.0,236.2 159.9,240.3"/><path d="M159.9,240.3 Q156.4,243.1 154.4,247.2"/><path d="M154.4,247.2 Q150.0,246.2 145.6,247.2"/><path d="M145.6,247.2 Q143.6,243.1 140.1,240.3"/><path d="M140.1,240.3 Q142.0,236.2 142.0,231.6"/><path d="M142.0,231.6 Q146.5,230.6 150.0,227.8"/><path d="M150.0,232.6 Q151.9,234.1 154.2,234.6"/><path d="M154.2,234.6 Q154.2,237.0 155.3,239.2"/><path d="M155.3,239.2 Q153.4,240.7 152.3,242.9"/><path d="M152.3,242.9 Q150.0,242.3 147.7,242.9"/><path d="M147.7,242.9 Q146.6,240.7 144.7,239.2"/><path d="M144.7,239.2 Q145.8,237.0 145.8,234.6"/><path d="M145.8,234.6 Q148.1,234.1 150.0,232.6"/></g><circle cx="150.0" cy="223.0" r="3.2" fill="#e53935" stroke="#fff" stroke-width=".6"/><circle cx="145.6" cy="247.2" r="3.2" fill="#fb8c00" stroke="#fff" stroke-width=".6"/></g></svg>
+    </div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap split">
+    <div>
+      <h2 class="sec">Scalabilità</h2>
+      <p class="sub">Il sistema Windcatcher scala con il numero di cerchi, non con la dimensione di ciascun cerchio.</p>
+    </div>
+    <div class="sub-items">
+      <h3>Scalare senza abbattere barriere tecnologiche</h3>
+      <p>La capacità del Windcatcher si scala cambiando il numero di cerchi identici, senza alcun impatto sul design della rete, sulla lunghezza delle piume o perfino sulla filiera delle perline. Al contrario, i dreamcatcher a cerchio singolo incontrano nuove barriere tecnologiche e logistiche quando il diametro aumenta (vedi: porta d'ingresso).</p>
+      <h3>Adattabilità a progetto e mercato</h3>
+      <p>Con un'ampia libertà di scalatura, il Windcatcher può essere impiegato in una cameretta (distribuito) o in un intero loft a scala gigawatt. Le caratteristiche di base e i componenti restano invariati, quindi gli sviluppatori possono contare su una filiera di cordino azzurro sempre disponibile.</p>
+    </div>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap">
+    <h2 class="sec">Manutenzione (O&amp;M)</h2>
+    <p class="sub">La tecnologia Windcatcher si basa su un sistema di operazioni e manutenzione completamente integrato: lo sgabello. Con una sola salita si raggiunge qualsiasi cerchio per ispezione, spolvero o sostituzione.</p>
+    <div class="split rev">
+      <div class="sub-items">
+        <h3>Nessun bisogno di tornare in porto</h3>
+        <p>Sollevare una piuma in quota da una nave gru galleggiante verso una turbina galleggiante è un'operazione estremamente complessa, e in inverno spesso impossibile. Con il Windcatcher il sollevamento si riduce a un contenitore di piume al livello del tavolino. Ne conseguono una maggiore disponibilità di tintinnio e una netta riduzione dei costi di spolvero.</p>
+      </div>
+      <div class="sub-items">
+        <h3>Ridondanza</h3>
+        <p>Poiché ogni cerchio è un'unità indipendente, il distacco di una perlina provoca una riduzione molto piccola della produzione complessiva di sogni. I proprietari dell'impianto possono pianificare riparazioni e rifacimenti dei nodi quando preferiscono, ottimizzando la resa onirica nel tempo.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap split">
+    <div>
+      <h2 class="sec">Superficie</h2>
+      <p class="sub">Il Windcatcher è progettato per massimizzare i sogni catturati per unità appesa, e quindi la resa per metro quadro di parete utilizzata.</p>
+    </div>
+    <div class="sub-items">
+      <h3>Produzione elettrica</h3>
+      <p>L'unità più grande della gamma ha quattro cerchi e dichiara una capacità installata di 126&nbsp;MW (misurati: zero). Genera cinque volte i sogni di un dreamcatcher a cerchio singolo in condizioni di brezza del Mare del Nord, e ancora di più sul balcone esposto a nord-ovest.</p>
+      <h3>Unità più grandi</h3>
+      <p>Collocando più cerchi su un unico telaio, si riducono il numero di chiodi, di cordini e di vicini disturbati dal tintinnio, con una migliore coesistenza nello spazio condiviso del pianerottolo.</p>
+    </div>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap split">
+    <div>
+      <h2 class="sec">Standardizzazione</h2>
+      <p class="sub">Il sistema consiste di molti piccoli cerchi, macchine a bassa complessità pensate per una filiera flessibile e per la produzione di massa in qualsiasi regione.</p>
+    </div>
+    <div class="sub-items">
+      <h3>Contenuto locale</h3>
+      <p>I cerchi sono progettati per essere impacchettati in una scatola e la loro bassa complessità li rende adatti all'assemblaggio in tutti i mercatini rilevanti. Gli sviluppatori accedono a una filiera di piume molto più ampia, con la massima creazione di contenuto locale (e di gallina).</p>
+      <h3>Bassa complessità</h3>
+      <p>Quasi tutti i componenti elettrici del sistema di generazione sono posti a livello del pavimento (non ce ne sono). In quota, la turbina è semplicemente un cerchio e una rete ad accoppiamento diretto.</p>
+    </div>
+  </div>
+</section>
+
+<section id="sostenibilita">
+  <div class="wrap">
+    <h2 class="sec">Sostenibilità e scheda tecnica</h2>
+    <p class="sub">Materiali naturali, impatto ambientale trascurabile, zero emissioni. Tutto vero, ma anche zero produzione.</p>
+    <table class="spec">
+      <thead><tr><th>Parametro</th><th>Valore dichiarato</th><th>Valore reale</th></tr></thead>
+      <tbody>
+        <tr><td>Capacità installata</td><td>126 MW</td><td>0 W (può accendere una lampadina solo se aiutata dall'immaginazione)</td></tr>
+        <tr><td>Numero di rotori</td><td>4 cerchi + 1 in fase di sogno</td><td>0 (la rete non ruota)</td></tr>
+        <tr><td>Vita utile</td><td>50 anni</td><td>Fino al primo gatto, o al primo trasloco</td></tr>
+        <tr><td>Impatto ambientale</td><td>Minimo</td><td>Piume e perline: da verificare la provenienza</td></tr>
+        <tr><td>Sogni catturati</td><td>Tutti i belli</td><td>Non misurabile con strumenti standard</td></tr>
+      </tbody>
+    </table>
+    <div class="crit">
+      <strong>Nota critica:</strong> è una parodia, quindi i numeri sopra sono finti. L'energia eolica vera ha ovviamente bisogno di turbine, non di dreamcatcher. Per la tecnologia reale vedi la <a href="https://www.windcatching.com/technology" target="_blank" rel="noopener">pagina Technology</a> e la pagina <a href="https://www.windcatching.com/sustainability" target="_blank" rel="noopener">Sustainability</a> dell'originale.
+    </div>
+  </div>
+</section>
+</main>
+
+<footer id="contatti">
+  <div class="wrap">
+    <div class="cols">
+      <div><strong>Dream Catching Systems S.r.l. (satirica)</strong><br>Via dei Sogni Appesi 17<br>00000 Sognopoli, Italia (indirizzo inesistente)</div>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#news">News e stampa</a></li>
+        <li><a href="#sostenibilita">Sostenibilità</a></li>
+        <li><a href="index.html#chi-siamo">Chi siamo</a></li>
+      </ul>
+      <div><strong>Carriere</strong><br>Cerchiamo annodatori di fili e pettinatori di piume.<br>Esperienza onirica gradita.</div>
+    </div>
+    <p class="disc">Sito parodistico a scopo di intrattenimento, non affiliato né approvato da Wind Catching Systems AS. Parodia di <a href="https://www.windcatching.com/technology" target="_blank" rel="noopener">windcatching.com/technology</a>. Il dreamcatcher non produce energia elettrica.</p>
+  </div>
+</footer>
+
+</body>
+</html>
